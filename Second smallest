@@ -1,0 +1,14 @@
+def secondSmallest(x):
+    if len( x ) < 2:
+        return
+    Smallest = float("inf")
+    SecSmallest = float("inf")
+    for i in x:
+        if i < Smallest:
+            SecSmallest = Smallest
+            Smallest = i
+        elif i < SecSmallest:
+            SecSmallest = i
+    return SecSmallest
+ x=[1,2,3,4]
+ print(secondSmallest(x))
