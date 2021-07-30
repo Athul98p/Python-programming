@@ -1,0 +1,10 @@
+def uniqtupls(inp,size):
+    inputlength=len(inp)
+    result = set()
+    for i in range(inputlength-size +1):
+        result.add(inp[i:i + size])
+    return result
+
+inp="abb"
+size=2
+print(uniqtupls(inp,size))
