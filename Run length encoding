@@ -1,0 +1,20 @@
+def rle(testString):
+    if(len(testString) == 0):
+        return "" 
+    lastseen = "" 
+    result = "" 
+    counter = 1 
+    for let in testString:
+        if( lastseen == let):
+            counter += 1 
+        else: 
+            if lastseen != "":
+                result = "%s%s%d" % (result, lastseen, counter)
+            counter = 1 
+            lastseen = let 
+    result = "%s%s%d" % (result, lastseen, counter) 
+    return result 
+
+"aab -> a2b1 "
+a="aab"
+print(rle(a))
