@@ -1,0 +1,34 @@
+def shortestdistance(string,w1,w2):
+    w1=w1.lower()
+    w2=w2.lower()
+    if(w1==w2):
+        return 0
+    words=string.split(" ")
+    idx=0
+    temp=0
+    mindist=len(string)
+  
+    for i in range(len(words)):
+  
+        if(words[i]==w1 ):
+            temp=idx+len(w1)/2 #13
+            jdx=0
+            for j in range(len(words)):
+                #print(j)
+                if(words[j]==w2 ):
+                    temp1=jdx+len(w2)/2 #21
+                    if(abs(temp-temp1)<mindist): #13-21 = 8<41
+                        mindist=abs(temp-temp1) #8
+                jdx+=len(words[j])+1 #17
+                #print(jdx)
+        idx+=len(words[i])+1 #10
+        #print(idx)
+    if(mindist==len(string)):
+        return -1
+    return mindist
+                        
+
+s="This is a sample document we just made up"
+w1="sample"
+w2="document"
+print(shortestdistance(s,w1,w2))
