@@ -1,0 +1,17 @@
+def finddistwords(s,w1,w2):
+    if(w1==w2):
+        return 0
+    words=s.split()
+    dist=len(words)
+    for i in range(len(words)):
+        if(words[i]==w1):
+            for j in range(len(words)):
+                if(words[j]==w2):
+                    new=abs(i-j)
+    return new
+
+
+s="This is a car"
+a="This"
+d="car"
+print(finddistwords(s,a,d))
