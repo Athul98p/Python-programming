@@ -1,0 +1,14 @@
+def find_top_ipaddress(lines):    
+    access_list = {} 
+    for line in lines: 
+        ip_address = line.split()[0] 
+        access_list[ip_address] = access_list.get(ip_address, 0) + 1 
+    ip_addresses = [key for key, val in access_list.items() 
+        if val == max(access_list.values())]
+    return ','.join(sorted(ip_addresses)) 
+
+lines=["10.0.0.1 - frank [10/Dec/2000:12:34:56 -0500] \"GET /a.gif HTTP/1.0\" 200 234", 
+                        "10.0.0.1 - frank [10/Dec/2000:12:34:57 -0500] \"GET /b.gif HTTP/1.0\" 200 234", 
+                        "10.0.0.2 - nancy [10/Dec/2000:12:34:58 -0500] \"GET /c.gif HTTP/1.0\" 200 234" 
+                        ]
+print(find_top_ipaddress(lines))
