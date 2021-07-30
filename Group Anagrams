@@ -1,0 +1,9 @@
+def group(words): 
+    word_index = {}
+    for word in words:
+        word_key = "".join(sorted(list(word))) 
+        word_index.setdefault(word_key, set()).add(word) 
+    anagram_sets = list(word_index.values()) 
+    return anagram_sets 
+words = ['cat', 'dog', 'cat', 'god'] 
+print(group(words))
