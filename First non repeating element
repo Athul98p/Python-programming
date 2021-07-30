@@ -1,0 +1,11 @@
+def findFirst(input): 
+    charFrequency = {}
+
+    for c in input: 
+        charFrequency[c] = charFrequency.pop(c, 0) + 1. 
+    for c in input: 
+        if(charFrequency[c] == 1): 
+            return c 
+    return 0
+tests = {"racecar":'e', "apple":'a', "ababdc":'d', "xxyyzz":0 }
+print(findFist(tests))
