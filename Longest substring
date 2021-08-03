@@ -1,0 +1,26 @@
+def longestuniformsubstring(input):
+    if(input==""):
+        return (-1,0)
+    dict1={}
+    c=[]
+    for i in input:
+        dict1[i]=dict1.get(i,0)+1
+    d=max(dict1.values())
+    #v=max(dict1.keys())
+    #print(max(dict1.values()))
+    v = max(dict1, key=dict1.get)
+    #print(v)
+
+    for i in range(len(input)):
+        if(input[i]==v):
+            c.append(i)
+            break
+    return (i,d)
+
+
+
+
+
+a="10000111"
+print(longestuniformsubstring(a))
+#"aabbbbbCdAA": (2, 5)
