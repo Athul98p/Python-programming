@@ -1,0 +1,19 @@
+
+def search(arr,x):
+    low=0
+    high=len(arr)-1
+    mid=(low+high)//2
+    while high >=low:
+        if(arr[mid]>x):
+            low = mid+1
+        elif(arr[mid]<x):
+            high=mid-1
+        else:
+            return mid
+    else:
+        return -1
+    
+arr=[1,4,2,7,8,12,34,6]
+x=2
+print(search(arr,x))
+    
