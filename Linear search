@@ -1,0 +1,13 @@
+def search(array,x):
+    for i in range(len(array)):
+        if(array[i]==x):
+            return i
+    else:
+        return -1
+        
+
+
+
+array=[1,23,35,46,50]
+x=23
+print(search(array,x))
