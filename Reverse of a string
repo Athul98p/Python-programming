@@ -1,0 +1,5 @@
+def revstring(word):
+    return word[::-1]
+
+c="apple"
+print(revstring(c))
