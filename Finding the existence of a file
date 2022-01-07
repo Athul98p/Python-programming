@@ -1,0 +1,19 @@
+#program to check if a file exists at a particular location
+#and to rename the file if needed
+import os
+print("Enter the file location:")
+path=input()#taking location from user
+f=open(path,"r")
+a=f.read()#reading the contents of the file
+isf=os.path.isfile(path)
+print("Existence of the file is:",isf)
+print("The content of this file is:\n",a)
+f.close()
+print("Do you wish to rename the file: Y or N")
+n=input()
+if(n=="Y"):
+    print("Enter the new file name")
+    nwfile=input()
+    os.rename(path,nwfile)#renaming the file
+else:
+    print("No change to the file")
